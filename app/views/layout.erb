@@ -15,8 +15,19 @@
   </head>
   <body>
     <div class="wrapper">
+      <nav>
+        <% if current_user %>
+          <a href="/games">All Games</a> |
+          <a href="/games/new">New Game</a> |
+          <a href="/users/<%= current_user.id %>">Account</a> |
+          <a href="/logout">Logout</a>
+        <% else %>
+          <a href="/signup">Sign Up</a> |
+          <a href="/login">Login</a>
+        <% end %>
+      </nav>
 
-        <%= yield %>
+      <%= yield %>
 
       <footer class="branding">
         <small>&copy; 2019 <strong>GameRatings</strong></small>
