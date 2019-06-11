@@ -11,28 +11,31 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <nav>
-        <% if current_user %>
-          <a href="/games">All Games</a> |
-          <a href="/games/new">New Game</a> |
-          <a href="/users/<%= current_user.id %>">Account</a> |
-          <a href="/logout">Logout</a>
-        <% else %>
-          <a href="/signup">Sign Up</a> |
-          <a href="/login">Login</a>
-        <% end %>
-      </nav>
+    <nav>
+        <a href="/">Home</a> |
+      <% if current_user %>
+        <a href="/games">All Games</a> |
+        <a href="/games/new">New Game</a> |
+        <a href="/users/<%= current_user.id %>">Account</a> |
+        <a href="/logout">Logout</a>
+      <% else %>
+        <a href="/signup">Sign Up</a> |
+        <a href="/login">Login</a>
+      <% end %>
+    </nav>
 
+    <div class="content-wrapper">
       <%= yield %>
-
-      <footer class="branding">
-        <small>&copy; 2019 <strong>GameRatings</strong></small>
-      </footer>
     </div>
+
+    <footer>
+      <small>&copy; 2019 <strong>GameRatings</strong></small>
+    </footer>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>
