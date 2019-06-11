@@ -1,0 +1,20 @@
+<h1><%= @game.title %></h1>
+
+<div class="single-game">
+	<img src="<%= @game.image_url %>" alt="<%= @game.title %>">
+	<div class="description">
+		<%= @game.description %>
+		<br />
+		<% if @game.user_id == current_user.id %>
+			<a class="button" href="/games/<%= @game.id %>/edit">Edit</a>
+
+			<form class="delete-form" action="/games/<%= @game.id %>" method="post">
+				<!-- How do I turn this form submission into a DELETE request??? -->
+				<input type="hidden" name="_method" value="DELETE">
+				<input type="submit" name="" class="button" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
+			</form>
+		<% end %>
+	</div>
+
+</div>
+
