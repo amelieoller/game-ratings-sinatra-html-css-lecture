@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20190603232105) do
     t.string  "description"
     t.integer "rating"
     t.integer "user_id"
+    t.string  "image_url"
   end
 
   create_table "users", force: :cascade do |t|

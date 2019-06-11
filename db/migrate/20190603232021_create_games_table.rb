@@ -5,6 +5,7 @@ class CreateGamesTable < ActiveRecord::Migration
       t.string :description
       t.integer :rating
       t.integer :user_id
+      t.string :image_url
     end
   end
 end
