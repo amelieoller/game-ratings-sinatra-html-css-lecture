@@ -19,11 +19,12 @@ class UsersController < ApplicationController
 		if @user
 			redirect '/login'
 		else
-			@user = User.create(email: params[:email], password: params[:password])
+			@user = User.new(email: params[:email], password: params[:password])
 			if @user.save
 				session[:user_id] = @user.id
 				redirect "/users/#{@user.id}"
 			else
+				@email = params[:email]
 				erb :signup
 			end
 		end
