@@ -149,7 +149,7 @@ a.button {
 }
 
 .games .game-info .description {
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
