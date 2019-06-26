@@ -9,3 +9,4 @@ use Rack::MethodOverride
 run ApplicationController
 use GamesController
 use UsersController
+use ReviewsController

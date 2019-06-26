@@ -19,10 +19,10 @@ class GamesController < ApplicationController
 	end
 
 	post '/games' do
-		# @game = Game.create(title: params[:title], description: params[:description])
-		@game = Game.create(params)
-		@game.user = current_user
-		@game.save
+		# @game = Game.create(title: params[:title], description: params[:description], image_url: params[:image_url], rating: params[:rating])
+		game = Game.create(params)
+		game.user = current_user
+		game.save
 
 		redirect "/games"
 	end
